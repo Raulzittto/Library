@@ -8,6 +8,7 @@ const model = (body, id = proxId++) => {
     body.matricula == "ativa" ||
     body.matricula == "inativa" ||
     body.matricula == "finalizada" &&
+    body.matricula > 0 &&
     body.curso != undefined &&
     body.curso != "" &&
     body.ano != undefined &&
