@@ -3,7 +3,11 @@ const estudante_controller = require("../controllers/estudante.js");
 
 let proxId = 1;
 
-const data_aluguel = body.data_aluguel
+
+
+const model = (body, id = proxId++) => {
+
+  const data_aluguel = body.data_aluguel
 .replaceAll("-", "")
 .replaceAll("/", "")
 .replaceAll(".", "")
@@ -15,8 +19,6 @@ const data_devolucao = body.data_devolucao
 .replaceAll(".", "")
 .replaceAll(" ", "")
 
-
-const model = (body, id = proxId++) => {
   if (
     livros_controller.show(body.livro_ID)&&
     estudante_controller.show(body.estudante_ID)&&
